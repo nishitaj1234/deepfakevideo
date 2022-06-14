@@ -13,7 +13,7 @@ from werkzeug.utils import secure_filename
 
 
 
-app=Flask("Deepfake Detection")
+app=Flask(__name__)
 app.config["UPLOAD_FOLDER"]="./static/uploads"
 
 @app.route("/")
@@ -82,5 +82,5 @@ def upload():
                 os.remove(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
                 return render_template("notdeepfake.html")
         
-
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run()
