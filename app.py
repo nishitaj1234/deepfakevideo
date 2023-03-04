@@ -10,9 +10,6 @@ landmarkpred=dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 from werkzeug.utils import secure_filename
 
 
-
-
-
 app=Flask(__name__)
 app.config["UPLOAD_FOLDER"]="./static/uploads"
 
